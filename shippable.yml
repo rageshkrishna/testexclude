@@ -1,0 +1,26 @@
+language: php
+
+php:
+  - 5.5
+  - 5.6
+
+addons:
+   hosts:
+    - local.dronegrip
+
+services:
+  - mysql
+  #- selenium
+
+env:
+  global:
+    - PROJECT=dronegrip-drupalcore HIPCHAT_ROOM=1878029
+
+matrix:
+  exclude:
+    - php: 5.3
+    - php: 5.4
+    - services: postgre
+
+notifications:
+  email: false
